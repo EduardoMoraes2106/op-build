@@ -7,6 +7,7 @@
 }
 :root{
   --padding-screen: 6rem;
+  --max-width-screen:1325px;
 }
 header {
     background-color: #24252a;
@@ -71,45 +72,70 @@ header {
 .mobile-menu {
     display: none;
 }
-.menu{
-  display: flex;
-  height: 1px;
-  padding: 0 var(--padding-screen);
-  justify-content: space-between;
-  border-bottom: 1px solid rgb(0, 0, 0);
-  align-items: center;
-}
-.menu .navigator li{
-  list-style-type:none ;
-}
-.menu .navigator{
-  display: flex;
-  gap: 10px;
-}
-.menu .logo img{
-  max-width: 100%;
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-}
+/*  Tela de Login  */ 
+
 .forms {
   display: flex;
-  padding: 50px var(--padding-screen);
+  padding: 0px var(--padding-screen);
+  flex-direction: column;
 }
 .forms .top a{
   text-decoration: none;
 }
+.forms .top {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+}
 .forms .top a button{
   gap: 10px;
   width: 160px;
-  height: 50px;
+  height: 60px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  background-color: aqua;
+  background-color: #0187A7;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 15px;
   font-weight: bold;
+}
+.forms-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+}
+.forms-content .login-form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px 13px;
+  background-color: #0187a7;
+  min-height: 400px;
+  justify-content: center;
+  border-radius: 20px;
+}
+.forms-content .login-form h1{
+  color: rgb(35, 219, 90);
+  margin-bottom: 20px;
+}
+.forms-content .login-form .elements{
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  padding: 0 30px;
+  outline: none;
+}
+.forms-content .login-form button{
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: aquamarine;
+  font-size: 20px;
 }
