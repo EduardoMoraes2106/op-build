@@ -8,7 +8,7 @@
 }
 .menu{
   display: flex;
-  height: 100px;
+  height: 124px;
   padding: 0 var(--padding-screen);
   justify-content: space-between;
   border-bottom: 1px solid rgb(0, 0, 0);
@@ -22,5 +22,29 @@
   gap: 10px;
 }
 .menu .logo img{
-  max-width: 130px;
+  max-width: 100%;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.forms {
+  display: flex;
+  padding: 50px var(--padding-screen);
+}
+.forms .top a{
+  text-decoration: none;
+}
+.forms .top a button{
+  gap: 10px;
+  width: 160px;
+  height: 50px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
 }
