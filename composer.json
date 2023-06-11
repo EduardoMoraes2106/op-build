@@ -2,7 +2,8 @@
     "nome":"opbuild/inc",
     "autoload": {
         "psr-4": {
-            "App\\":"app/"
+            "App\\":"app/",
+            "files": ["/App/config.php"]
         }
     }
 }
