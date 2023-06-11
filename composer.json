@@ -1,0 +1,8 @@
+{
+    "nome":"opbuild/inc",
+    "autoload": {
+        "psr-4": {
+            "App\\":"app/"
+        }
+    }
+}
