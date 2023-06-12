@@ -72,6 +72,34 @@ header {
 .mobile-menu {
     display: none;
 }
+
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: none;
+  background-color: #0187a7;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 30px;
+}
+
+.back-button i {
+  margin-right: 5px;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+
+.back-button:hover {
+  background-color: #0056b3;
+}
 /*  Tela de Login  */ 
 
 .container {
