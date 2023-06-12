@@ -10,7 +10,7 @@ class Home extends Main{
         return $html;
     }
     public static function getHome(){
-        $content= View::render('Pages/home',[
+        $content= View::render('pages/home',[
             'name' => 'OP-Build',
             'navBar' => self::getNavBar()
         ]);
