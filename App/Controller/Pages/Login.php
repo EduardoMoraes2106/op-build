@@ -15,13 +15,23 @@ class Login extends Main{
         ]);
         return $content;
     }
-
+    private static function getStyles(){
+        $styles = '';
+        $styles .= View::render('pages/components/style',[
+            'link'=>'assets/css/style.css'
+        ]);
+        $styles .= View::render('pages/components/style',[
+            'link'=>'assets/css/responsive.css'
+        ]);
+        return $styles;
+    }
     public static function getLogin(){
         $content= View::render('pages/login',[
             'name' => 'OP-Build',
             'form' => self::getForm(),
             'scripts'=> self::getScript()
         ]);
-        return parent::getMain('Login - OPBuild', $content);
+        $styles = self::getStyles();
+        return parent::getMain('Login - OPBuild', $content,$styles);
     }
 }

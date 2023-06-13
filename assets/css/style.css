@@ -6,27 +6,39 @@
     font-family: 'Inter', sans-serif;
 }
 :root{
-  --padding-screen: 6rem;
+  --padding-screen: 100px;
   --max-width-screen:1325px;
+
+  --btn-color: #341ED3;
+  --background-elements-color: #0F0F0F;
+  --background-elements-color-opacity: #0f0f0fd8;
+
 }
-header {
-    background-color: #24252a;
-    box-shadow: 0px 3px 10px #464646;
+body{
+  background-color: black;
+}
+.menu{
+  background-color: var(--background-elements-color-opacity);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 1.5rem var(--padding-screen);
+
+  position: absolute;
+  width: 100%;
+  z-index: 33;
+
+  backdrop-filter: blur(5px);
+}
+.menu .left{
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
-.nav-bar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem var(--padding-screen);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo h1 {
-    color: #fff;
+.logo{
+  display: flex;
 }
 
 .nav-list {
@@ -46,21 +58,24 @@ header {
 
 .nav-link {
     text-decoration: none;
-    font-size: 1.15rem;
+    font-size: 17.85px;
     color: #fff;
     font-weight: 400;
 }
 
-.login-button button {
+.login-button a button {
     border: none;
-    padding: 10px 15px;
+    width: 165px;
+    height: 55px;
     border-radius: 5px;
-    background-color: #0187a7;
+    background-color:var(--btn-color);
+    color: white;
+    border-radius: 999px;
+    cursor: pointer;
 }
 
-.login-button button a {
+.login-button a {
     text-decoration: none;
-    color: #fff;
     font-weight: 500;
     font-size: 1.1rem;
 }
@@ -73,538 +88,145 @@ header {
     display: none;
 }
 
-.back-button {
+header{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 0 var(--padding-screen);
+  color: white;
+  justify-content: center;
+}
+header .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 3px);
+  z-index: -1;
+  opacity: 0.3;
+}
+header .video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+header .content{
+  z-index: 2;
+  width: 100%;
+  max-width: var(--max-width-screen);
+}
+header .content .text{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+header .content .text h1{
+  max-width: 400px;
+}
+header .content .text p{
+  max-width: 550px;
+}
+header .content .text .hashtag{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .btns{
+  display: flex;
+  gap: 20px;
+}
+header .btns a{
+  text-decoration: none;
+}
+header .btns button{
+  width: 159.56px;
+  height: 55.36px;
+  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
-  border: none;
-  background-color: #0187a7;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
+  gap: 10px;
   cursor: pointer;
-  text-decoration: none;
-  margin: 30px;
+  border: none;
+  outline: none;
 }
-
-.back-button i {
-  margin-right: 5px;
+header .btns .ver{
+  background-color: var(--btn-color);
+  color: white;
+  fill: white;
 }
-
-.back-button:hover {
-  background-color: #0056b3;
-}
-
-
-.back-button:hover {
-  background-color: #0056b3;
+header .btns .more{
+  background-color: var(--btn-color);
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border: 3px solid rgb(255, 255, 255);
+  fill: rgb(255, 255, 255);
 }
 /*  Tela de Login  */ 
 
-.container {
+.forms {
+  display: flex;
+  padding: 0px var(--padding-screen);
+  flex-direction: column;
+}
+.forms .top a{
+  text-decoration: none;
+}
+.forms .top {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+}
+.forms .top a button{
+  gap: 10px;
+  width: 160px;
+  height: 60px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background-color: #0187A7;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+.forms-content{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #ecf0f1;
+  gap: 20px;
 }
-.content {
-  background-color: #fff;
-  border-radius: 15px;
-  width: 960px;
-  height: 50%;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-.content::before {
-  content: "";
-  position: absolute;
-  background-color: #58af9b;
-  width: 40%;
-  height: 100%;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-
-
-  left: 0;
-}
-.title {
-  font-size: 28px;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-.title-primary {
-  color: #fff;
-}
-.title-second {
-  color: #58af9b;
-}
-.description {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 30px;
-}
-.description-primary {
-  color: #fff;
-}
-.description-second {
-  color: #7f8c8d;
-}
-.btn {
-  border-radius: 15px;
-  text-transform: uppercase;
-  color: #fff;
-  font-size: 10px;
-  padding: 10px 50px;
-  cursor: pointer;
-  font-weight: bold;
-  width: 150px;
-  align-self: center;
-  border: none;
-  margin-top: 1rem;
-}
-.btn-primary {
-  background-color: transparent;
-  border: 1px solid #fff;
-  transition: background-color .5s;
-}
-.btn-primary:hover {
-  background-color: #fff;
-  color: #58af9b;
-}
-.btn-second {
-  background-color: #58af9b;
-  border: 1px solid #58af9b;
-  transition: background-color .5s;
-}
-.btn-second:hover {
-  background-color: #fff;
-  border: 1px solid #58af9b;
-  color: #58af9b;
-}
-.first-content {
-  display: flex;
-}
-.first-content .second-column {
-  z-index: 11;
-}
-.first-column {
-  text-align: center;
-  width: 40%;
-  z-index: 10;
-}
-.second-column {
-  width: 60%;
+.forms-content .login-form{
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-.social-media {
-  margin: 1rem 0;
-}
-.link-social-media:not(:first-child){
-  margin-left: 10px;
-}
-.link-social-media .item-social-media {
-  transition: background-color .5s;
-}
-.link-social-media:hover .item-social-media{
-  background-color: #58af9b;
-  color: #fff;
-  border-color: #58af9b;
-}
-.list-social-media {
-  display: flex;
-  list-style-type: none;
-}
-.item-social-media {
-  border: 1px solid #bdc3c7;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  text-align: center;
-  color: #95a5a6;
-}
-.form {
-  display: flex;
-  flex-direction: column;
-  width: 55%;
-}
-.form input {
-  height: 45px;
+  gap: 15px;
   width: 100%;
+  max-width: 400px;
+  padding: 20px 13px;
+  background-color: #0187a7;
+  min-height: 400px;
+  justify-content: center;
+  border-radius: 20px;
+}
+.forms-content .login-form h1{
+  color: rgb(35, 219, 90);
+  margin-bottom: 20px;
+}
+.forms-content .login-form .elements{
+  height: 50px;
+  border-radius: 20px;
   border: none;
-  background-color: #ecf0f1;
+  padding: 0 30px;
+  outline: none;
 }
-input:-webkit-autofill 
-{    
-  -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
-  -webkit-text-fill-color: #000 !important;
-}
-.label-input {
-  background-color: #ecf0f1;
-  display: flex;
-  align-items: center;
-  margin: 8px;
-}
-.icon-modify {
-  color: #7f8c8d;
-  padding: 0 5px;
-}
-
-/* second content*/
-
-.second-content {
-  position: absolute;
-  display: flex;
-}
-.second-content .first-column {
-  order: 2;
-  z-index: -1;
-}
-.second-content .second-column {
-  order: 1;
-  z-index: -1;
-}
-.password {
-  color: #34495e;
-  font-size: 14px;
-  margin: 15px 0;
-  text-align: center;
-}
-.password::first-letter {
-  text-transform: capitalize;
-}
-
-
-
-.sign-in-js .first-content .first-column {
-  z-index: -1;
-}
-
-.sign-in-js .second-content .second-column {
-  z-index: 11;
-}
-.sign-in-js .second-content .first-column {
-  z-index: 13;
-}
-
-.sign-in-js .content::before {
-  left: 60%;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  animation: slidein 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
-
-  z-index: 12;
-}
-
-.sign-up-js .content::before {
-  animation: slideout 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
-
-  z-index: 12;
-}
-
-.sign-up-js .second-content .first-column,
-.sign-up-js .second-content .second-column {
-  z-index: -1;
-}
-
-.sign-up-js .first-content .second-column {
-  z-index: 11;
-}
-
-.sign-up-js .first-content .first-column {
-  z-index: 13;    
-}
-
-
-/* DESLOCAMENTO CONTEÚDO ATRÁS DO CONTENT:BEFORE*/
-.sign-in-js .first-content .second-column {
-
-  z-index: -1;
-  position: relative;
-  animation: deslocamentoEsq 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
-}
-
-.sign-up-js .second-content .second-column {
-  position: relative;
-  z-index: -1;
-  animation: deslocamentoDir 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
-}
-
-/*ANIMAÇÃOO CSS PARA O CONTEÚDO*/
-
-@keyframes deslocamentoEsq {
-
-  from {
-      left: 0;
-      opacity: 1;
-      z-index: 12;
-  }
-
-  25% {
-      left: -80px;
-      opacity: .5;
-      /* z-index: 12; NÃO HÁ NECESSIDADE */
-  }
-
-  50% {
-      left: -100px;
-      opacity: .2;
-      /* z-index: 12; NÃO HÁ NECESSIDADE */
-  }
-
-  to {
-      left: -110px;
-      opacity: 0;
-      z-index: -1;
-  }
-}
-
-
-@keyframes deslocamentoDir {
-
-  from {
-      left: 0;
-      z-index: 12;
-  }
-
-  25% {
-      left: 80px;
-      /* z-index: 12;  NÃO HÁ NECESSIDADE*/
-  }
-
-  50% {
-      left: 100px;
-      /* z-index: 12; NÃO HÁ NECESSIDADE*/
-      /* background-color: yellow;  Exemplo que dei no vídeo*/
-  }
-
-  to {
-      left: 110px;
-      z-index: -1;
-  }
-}
-
-
-/*ANIMAÇÃO CSS*/
-
-@keyframes slidein {
-
-  from {
-      left: 0;
-      width: 40%;
-  }
-
-  25% {
-      left: 5%;
-      width: 50%;
-  }
-
-  50% {
-      left: 25%;
-      width: 60%;
-  }
-
-  75% {
-      left: 45%;
-      width: 50%;
-  }
-
-  to {
-      left: 60%;
-      width: 40%;
-  }
-}
-
-@keyframes slideout {
-
-  from {
-      left: 60%;
-      width: 40%;
-  }
-
-  25% {
-      left: 45%;
-      width: 50%;
-  }
-
-  50% {
-      left: 25%;
-      width: 60%;
-  }
-
-  75% {
-      left: 5%;
-      width: 50%;
-  }
-
-  to {
-      left: 0;
-      width: 40%;
-  }
-}
-
-/*VERSÃO MOBILE*/
-@media screen and (max-width: 1040px) {
-  .content {
-      width: 100%;
-      height: 100%;
-  }
-
-  .content::before {
-      width: 100%;
-      height: 40%;
-      top: 0;
-      border-radius: 0;
-  }
-  .first-content, .second-content {
-      flex-direction: column;
-      justify-content: space-around;
-  }
-
-  .first-column, .second-column {
-      width: 100%;
-  }
-  
-  .sign-in-js .content::before {
-      top: 60%;
-      left: 0;
-      border-radius: 0;
-
-  }
-
-  .form {
-      width: 90%;
-  }
-  
-  /* ANIMAÇÃO MOBILE CSS*/
-
-  @keyframes deslocamentoEsq {
-
-      from {
-          top: 0;
-          opacity: 1;
-          z-index: 12;
-      }
-  
-      25% {
-          top: -80px;
-          opacity: .5;
-          /* z-index: 12; NÃO HÁ NECESSIDADE */
-      }
-  
-      50% {
-          top: -100px;
-          opacity: .2;
-          /* z-index: 12; NÃO HÁ NECESSIDADE */
-      }
-  
-      to {
-          top: -110px;
-          opacity: 0;
-          z-index: -1;
-      }
-  }
-  
-  
-  @keyframes deslocamentoDir {
-  
-      from {
-          top: 0;
-          z-index: 12;
-      }
-  
-      25% {
-          top: 80px;
-          /* z-index: 12;  NÃO HÁ NECESSIDADE*/
-      }
-  
-      50% {
-          top: 100px;
-          /* z-index: 12; NÃO HÁ NECESSIDADE*/
-          /* background-color: yellow;  Exemplo que dei no vídeo*/
-      }
-  
-      to {
-          top: 110px;
-          z-index: -1;
-      }
-  }
-  
-  
-  
-  @keyframes slidein {
-  
-      from {
-          top: 0;
-          height: 40%;
-      }
-  
-      25% {
-          top: 5%;
-          height: 50%;
-      }
-  
-      50% {
-          top: 25%;
-          height: 60%;
-      }
-  
-      75% {
-          top: 45%;
-          height: 50%;
-      }
-  
-      to {
-          top: 60%;
-          height: 40%;
-      }
-  }
-  
-  @keyframes slideout {
-  
-      from {
-          top: 60%;
-          height: 40%;
-      }
-  
-      25% {
-          top: 45%;
-          height: 50%;
-      }
-  
-      50% {
-          top: 25%;
-          height: 60%;
-      }
-  
-      75% {
-          top: 5%;
-          height: 50%;
-      }
-  
-      to {
-          top: 0;
-          height: 40%;
-      }
-  }
- 
-}
-
-@media screen and (max-width: 740px) {
-  .form {
-      width: 50%;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .form {
-      width: 100%;
-  }
+.forms-content .login-form button{
+  height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: aquamarine;
+  font-size: 20px;
 }

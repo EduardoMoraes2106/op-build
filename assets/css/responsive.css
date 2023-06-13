@@ -1,4 +1,9 @@
-@media screen and (max-width: 730px) {
+@media (max-width: 1193px){
+    :root{
+        --padding-screen: 50px;
+    }
+}
+@media (max-width: 730px) {
   .nav-bar {
       padding: 1.5rem 4rem;
   }
@@ -36,4 +41,9 @@
   .open {
       display: block;
   }
+}
+@media (max-width: 577px){
+    :root{
+        --padding-screen: 15px;
+    }
 }
